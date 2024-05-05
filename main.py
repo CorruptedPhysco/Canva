@@ -1,7 +1,7 @@
 from bs4 import BeautifulSoup
 import requests
 import os
-
+import telebot
 
 
 from keep_alive import keep_alive
