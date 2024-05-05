@@ -32,6 +32,7 @@ def getlink():
 
 
   url2=job_desc
+  print(url2)
   page2=requests.get(str(url2))
   html2=page2.content
   soup2 = BeautifulSoup(html2,"html.parser")
