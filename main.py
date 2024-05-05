@@ -28,6 +28,7 @@ def getlink():
       j = (i.lstrip('href='))
       job_desc=j.replace('"', '')
       print(job_desc)
+  return job_desc
  
 
 
@@ -37,6 +38,10 @@ getlink()
 def send_welcome(message):
     bot.reply_to(message, "Howdy, how are you doing?")
 
+
+@bot.message_handler(commands=['star'])
+def send_wele(message):
+    bot.reply_to(message, getlink())
 
 
 bot.polling()
