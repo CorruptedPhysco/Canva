@@ -1,12 +1,16 @@
 from bs4 import BeautifulSoup
 import requests
-from flask import Flask,request,jsonify
+
 from keep_alive import keep_alive
 keep_alive()
 
+token=os.environ.get('token')
+bot = telebot.TeleBot(token)
 
-app = Flask(__name__)
+@bot.message_handler(commands=['start', 'help'])
+def send_welcome(message):
+    bot.reply_to(message, "Howdy, how are you doing?")
 
-@app.route(/)
-def home():
-  return "home"
+
+
+bot.polling()
